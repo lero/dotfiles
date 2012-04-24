@@ -1,0 +1,16 @@
+URxvt*font:              -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
+URxvt*scrollBar:         false
+URxvt*loginShell:        true
+URxvt*termName:          screen-256color
+URxvt*perl-ext-common:   default,matcher
+URxvt*urlLauncher:       chromium
+URxvt*matcher.button:    1
+URxvt*background:        black
+URxvt*foreground:        white
+URxvt*saveLines:         20000
+URxvt*geometry:          140x45
+URxvt*scrollTtyOutput:   false
+URxvt*scrollWithBuffer:  true
+URxvt*scrollTtyKeypress: true
+
+Xautolock.locker:       slock
