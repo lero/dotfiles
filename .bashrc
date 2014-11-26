@@ -6,8 +6,11 @@ alias vi='vim'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
+export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] '
 export LESS="-R"
 export EDITOR="vim"
+export GOPATH=~/Devel/go
+export PATH=$PATH:~/Devel/go/bin
 
 man() {
 	env \
