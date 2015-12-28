@@ -137,6 +137,7 @@ assign [class="chromium"] → $ws2
 assign [class="Firefox"] → $ws4
 
 # exec some applications
+exec --no-startup-id dropbox-cli start
 exec --no-startup-id telegram
 exec --no-startup-id chromium
 exec --no-startup-id firefox
