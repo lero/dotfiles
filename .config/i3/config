@@ -9,13 +9,19 @@ set $mod Mod4
 floating_modifier $mod
 
 # font
-font pango: Monospace 8
+font pango: Lekton 10
+
+# set workspace names
+set $ws1 comm
+set $ws2 web
+set $ws3 term
+set $ws4 mail
 
 # term, kill, run and lock
 bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
-bindsym $mod+Control+l exec /usr/local/bin/locker
+bindsym $mod+Control+l exec /home/gms/.config/i3/scripts/locker.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -61,18 +67,18 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -104,17 +110,18 @@ bindsym $mod+r mode "resize"
 # bar
 bar {
 	position top
-    status_command i3status
+    status_command i3blocks
     tray_output primary
+    font pango:Lekton 8, Icons 8
 }
 
 # sound
 bindsym XF86AudioRaiseVolume exec amixer -c1 -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -c1 -q sset Master 5%- unmute
 bindsym XF86AudioMute exec amixer -c1 -q sset Master toggle
-bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
 
 # brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
@@ -125,14 +132,13 @@ bindsym XF86KbdBrightnessUp exec kbdlight up
 bindsym XF86KbdBrightnessDown exec kbdlight down
 
 # window assignments
-assign [class="Telegram"] → 1
-assign [class="chromium"] → 2
-assign [class="URxvt"] → 3
-assign [class="Firefox"] → 4
+assign [class="Telegram"] → $ws1
+assign [class="chromium"] → $ws2
+assign [class="Firefox"] → $ws4
 
 # exec some applications
-exec telegram
-exec chromium
-exec firefox
+exec --no-startup-id telegram
+exec --no-startup-id chromium
+exec --no-startup-id firefox
 exec --no-startup-id urxvtc
-exec xss-lock -- locker &
+exec --no-startup-id xautolock -time 10 -locker "/home/gms/.config/i3/scripts/locker.sh" -detectsleep
