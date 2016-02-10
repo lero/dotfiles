@@ -1,3 +1,5 @@
 [user]
 	email = guialemas@gmail.com
 	name = Guilherme M. Schroeder
+[push]
+	default = simple

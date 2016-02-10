@@ -35,5 +35,6 @@ if [ "$?" == 2 ]; then
     (umask 066; ssh-agent > ~/.ssh-agent)
     eval "$(<~/.ssh-agent)" >/dev/null
     ssh-add
+    ssh-add ~/.ssh/id_rsa_gms
   fi
 fi

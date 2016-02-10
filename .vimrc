@@ -1,8 +1,12 @@
 set nocompatible
+set t_Co=256
+call pathogen#infect()
+syntax on
+set background=dark " dark | light "
 set backspace=indent,eol,start
 set history=50
-set ruler       
-set showcmd             
+set ruler
+set showcmd
 set incsearch
 set mouse=
 set autoindent
@@ -12,5 +16,5 @@ set ts=4
 set sw=4
 set vb t_vb=
 set showmatch
-set bg=dark
-syntax on
+colorscheme solarized
+filetype plugin on

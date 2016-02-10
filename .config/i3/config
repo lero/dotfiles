@@ -9,7 +9,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # font
-font pango: Lekton 10
+font pango: Share 10
 
 # set workspace names
 set $ws1 comm
@@ -21,7 +21,7 @@ set $ws4 mail
 bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
-bindsym $mod+Control+l exec /home/gms/.config/i3/scripts/locker.sh
+bindsym $mod+Control+l exec ~/.config/i3/scripts/locker.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -112,7 +112,7 @@ bar {
 	position top
     status_command i3blocks
     tray_output primary
-    font pango:Lekton 8, Icons 8
+    font pango: Share 10
 }
 
 # sound
@@ -139,7 +139,13 @@ assign [class="Firefox"] → $ws4
 # exec some applications
 exec --no-startup-id dropbox-cli start
 exec --no-startup-id telegram
+exec --no-startup-id redshift
 exec --no-startup-id chromium
 exec --no-startup-id firefox
-exec --no-startup-id urxvtc
-exec --no-startup-id xautolock -time 10 -locker "/home/gms/.config/i3/scripts/locker.sh" -detectsleep
+exec --no-startup-id urxvtc -e weechat
+exec --no-startup-id xautolock -time 10 -locker "~/.config/i3/scripts/locker.sh" -detectsleep
+
+client.focused          #285577 #285577 #FFFFFF #285577
+client.focused_inactive #4F4E43 #49483E #BFBFBF #49483E
+client.unfocused        #000000 #000000 #888888 #000000
+client.urgent           #662B32 #58252B #F4BF75 #58252B
