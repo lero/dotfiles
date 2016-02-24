@@ -1,0 +1,152 @@
+# tabbed layout as default
+workspace_layout tabbed
+
+# no borders
+hide_edge_borders both
+
+# modifier and floating modifier
+set $mod Mod4
+floating_modifier $mod
+
+# font
+font pango: Share 15
+
+# set workspace names
+set $ws1 1:comm
+set $ws2 2:web
+set $ws3 3:term
+set $ws4 4:mail
+
+# term, kill, run and lock
+bindsym $mod+Return exec urxvtc
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec dmenu_run
+bindsym $mod+Control+l exec ~/.config/i3/scripts/locker.sh
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit i3?' -b 'Yes' 'i3-msg exit'"
+
+# resize window
+mode "resize" {
+	bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# bar
+bar {
+	position top
+    status_command i3blocks
+    tray_output primary
+    font pango: Share 15 
+}
+
+# sound
+bindsym XF86AudioRaiseVolume exec amixer -c1 -q sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -c1 -q sset Master 5%- unmute
+bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
+
+# brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+
+# kbd brightness
+bindsym XF86KbdBrightnessUp exec kbdlight up
+bindsym XF86KbdBrightnessDown exec kbdlight down
+
+# window assignments
+assign [class="Telegram"] → $ws1
+assign [class="Spotify"] → $ws1
+assign [class="chromium"] → $ws2
+assign [class="Firefox"] → $ws4
+
+# exec some applications
+exec --no-startup-id dropbox-cli start
+exec --no-startup-id telegram
+#exec --no-startup-id redshift
+exec --no-startup-id chromium
+exec --no-startup-id firefox
+exec --no-startup-id urxvtc -e weechat
+exec --no-startup-id xautolock
+
+client.focused          #285577 #285577 #FFFFFF #285577
+client.focused_inactive #4F4E43 #49483E #BFBFBF #49483E
+client.unfocused        #000000 #000000 #888888 #000000
+client.urgent           #662B32 #58252B #F4BF75 #58252B

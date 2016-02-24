@@ -1,23 +1,25 @@
-Xft.lcdfilter: lcddefault
-Xft.dpi: 96
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
-Xft.hintstyle: hintslight
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+!Xft.lcdfilter: lcddefault
 
-URxvt*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
-!URxvt*font: xft:Terminus (TTF):size=12:antialias=true
-!URxvt*boldFont: xft:Terminus (TTF):bold:size=12:antialias=true
-URxvt*scrollBar: false
-URxvt*loginShell: true
-URxvt*perl-ext-common: default,matcher
-URxvt*urlLauncher: chromium
-URxvt*matcher.button: 1
-URxvt*saveLines: 50000
-URxvt*geometry: 140x45
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: true
-URxvt*scrollTtyKeypress: true
+Xautolock.time: 10
+Xautolock.locker: ~/.config/i3/scripts/locker.sh
+
+URxvt.font: xft:Terminus (TTF):size=12:antialias=true
+URxvt.boldFont: xft:Terminus (TTF):bold:size=12:antialias=true
+URxvt.scrollBar: false
+URxvt.loginShell: true
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: chromium
+URxvt.matcher.button: 1
+URxvt.saveLines: 50000
+URxvt.geometry: 140x45
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
 URxvt.intensityStyles: false
 
 #define S_base03        #002b36

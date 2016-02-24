@@ -2,8 +2,6 @@
 
 name=$(iwgetid -r)
 
-if [ ! $name ]; then
-	echo " Off"
-else
-	echo "" $name
+if [[ $name ]]; then
+	echo ""
 fi

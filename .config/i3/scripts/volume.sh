@@ -4,19 +4,11 @@ mute=$(amixer -c1 get Master | grep Mono: | awk '{print $6}')
 vol=$(amixer -c1 get Master | grep Mono: | awk '{print $4}' | tr -d '[%]')
 
 if [ $mute == "[on]" ]; then
-    if [ $vol -eq 100 ]; then
-        echo "  $vol%"
-    elif [ $vol -ge 50 ]; then
-        echo "   $vol%"
-    elif [ $vol -lt 50 ]; then
-        if [ $vol -lt 10 ]; then
-            echo "       $vol%"
-        else 
-            echo "    $vol%"
-        fi
-    else
-        :
+    if [ $vol -le 50 ]; then
+        echo ""
+    elif [ $vol -le 100 ]; then
+        echo ""
     fi
 else
-    echo "  Muted " 
+    echo "" 
 fi

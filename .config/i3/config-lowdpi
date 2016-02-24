@@ -12,10 +12,10 @@ floating_modifier $mod
 font pango: Share 10
 
 # set workspace names
-set $ws1 comm
-set $ws2 web
-set $ws3 term
-set $ws4 mail
+set $ws1 1:comm
+set $ws2 2:web
+set $ws3 3:term
+set $ws4 4:mail
 
 # term, kill, run and lock
 bindsym $mod+Return exec urxvtc
@@ -118,7 +118,7 @@ bar {
 # sound
 bindsym XF86AudioRaiseVolume exec amixer -c1 -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -c1 -q sset Master 5%- unmute
-bindsym XF86AudioMute exec amixer -c1 -q sset Master toggle
+bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
@@ -133,17 +133,18 @@ bindsym XF86KbdBrightnessDown exec kbdlight down
 
 # window assignments
 assign [class="Telegram"] → $ws1
+assign [class="Spotify"] → $ws1
 assign [class="chromium"] → $ws2
 assign [class="Firefox"] → $ws4
 
 # exec some applications
 exec --no-startup-id dropbox-cli start
 exec --no-startup-id telegram
-exec --no-startup-id redshift
+#exec --no-startup-id redshift
 exec --no-startup-id chromium
 exec --no-startup-id firefox
 exec --no-startup-id urxvtc -e weechat
-exec --no-startup-id xautolock -time 10 -locker "~/.config/i3/scripts/locker.sh" -detectsleep
+exec --no-startup-id xautolock
 
 client.focused          #285577 #285577 #FFFFFF #285577
 client.focused_inactive #4F4E43 #49483E #BFBFBF #49483E

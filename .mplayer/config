@@ -2,5 +2,3 @@
 vo=vaapi
 va=vaapi
 subcp=ISO-8859-1
-cache=8192
-cache-min=4
