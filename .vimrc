@@ -15,4 +15,6 @@ set ts=4
 set sw=4
 set vb t_vb=
 set showmatch
-filetype plugin on
+filetype plugin indent on
+execute pathogen#infect()
+colorscheme solarized
