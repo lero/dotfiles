@@ -140,7 +140,7 @@ assign [class="Firefox"] → $ws4
 # exec some applications
 exec --no-startup-id dropbox-cli start
 exec --no-startup-id telegram
-#exec --no-startup-id redshift
+exec --no-startup-id redshift -l 52.35:4.852
 exec --no-startup-id chromium
 exec --no-startup-id firefox
 exec --no-startup-id urxvtc -e weechat
