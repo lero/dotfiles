@@ -10,8 +10,8 @@ alias grep='grep --color=auto'
 export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] '
 export LESS='-R'
 export EDITOR='vim'
-export GOPATH='~/devel/go'
-export PATH=$PATH:$GOPTH/bin
+export GOPATH=~/devel/go
+export PATH=$PATH:$GOPATH/bin
 
 man() {
 	env \
