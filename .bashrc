@@ -14,15 +14,15 @@ export GOPATH=~/devel/go
 export PATH=$PATH:$GOPATH/bin
 
 man() {
-	env \
-	LESS_TERMCAP_mb=$'\E[1;31m' \
-	LESS_TERMCAP_md=$'\E[1;31m' \
-	LESS_TERMCAP_me=$'\E[0m' \
-	LESS_TERMCAP_se=$'\E[0m' \
-	LESS_TERMCAP_so=$'\E[1;44;33m' \
-	LESS_TERMCAP_ue=$'\E[0m' \
-	LESS_TERMCAP_us=$'\E[1;32m' \
-	man "$@"
+  env \
+  LESS_TERMCAP_mb=$'\E[1;31m' \
+  LESS_TERMCAP_md=$'\E[1;31m' \
+  LESS_TERMCAP_me=$'\E[0m' \
+  LESS_TERMCAP_se=$'\E[0m' \
+  LESS_TERMCAP_so=$'\E[1;44;33m' \
+  LESS_TERMCAP_ue=$'\E[0m' \
+  LESS_TERMCAP_us=$'\E[1;32m' \
+  man "$@"
 }
 
 # ssh
