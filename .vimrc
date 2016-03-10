@@ -18,3 +18,5 @@ set showmatch
 filetype plugin indent on
 execute pathogen#infect()
 colorscheme solarized
+
+let g:go_fmt_command = "goimports"

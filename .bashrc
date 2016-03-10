@@ -11,7 +11,7 @@ export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[
 export LESS='-R'
 export EDITOR='vim'
 export GOPATH=~/devel/go:~/devel/gopath
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:~/devel/go/bin
 
 man() {
   env \
