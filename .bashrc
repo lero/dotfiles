@@ -2,6 +2,9 @@
 
 [[ $- != *i* ]] && return
 
+shopt -s histappend
+shopt -s checkwinsize
+
 alias x='startx'
 alias vi='vim'
 alias ls='ls --color=auto -CF'
@@ -18,6 +21,10 @@ export LESS='-R'
 export EDITOR='vim'
 export GOPATH=~/devel/go:~/devel/gopath
 export PATH=$PATH:~/devel/go/bin
+export HISTSIZE=5000
+export HISTFILESIZE=10000
+export HISTCONTROL=ignoredups
+export HISTIGNORE='ls:bg:fg:history'
 
 man() {
   env \
