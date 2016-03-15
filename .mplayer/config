@@ -1,4 +1,4 @@
 [default]
-vo=vaapi
-va=vaapi
+#vo=vaapi
+#va=vaapi
 subcp=ISO-8859-1
