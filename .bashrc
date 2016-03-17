@@ -5,6 +5,7 @@
 shopt -s histappend
 shopt -s checkwinsize
 
+alias chroma='mpv http://85.25.86.69:8000'
 alias gadd='git add'
 alias gamend='git commit -v -a --amend'
 alias gcommit='git commit -v -a'
@@ -13,6 +14,7 @@ alias glog='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 alias gpull='git pull --rebase'
 alias gpush='git push'
 alias gstat='git status'
+alias gshow='git show'
 alias grep='grep --color=auto'
 alias ls='ls --color=auto -CF'
 alias up='sudo salt-call --local state.highstate --pillar-root=/srv/salt/pillar'
