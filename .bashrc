@@ -6,6 +6,7 @@ shopt -s histappend
 shopt -s checkwinsize
 
 alias gadd='git add'
+alias gamend='git commit -v -a --amend'
 alias gcommit='git commit -v -a'
 alias gdiff='git diff'
 alias glog='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
