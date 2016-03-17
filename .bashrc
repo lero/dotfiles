@@ -5,16 +5,18 @@
 shopt -s histappend
 shopt -s checkwinsize
 
-alias x='startx'
-alias vi='vim'
-alias ls='ls --color=auto -CF'
-alias grep='grep --color=auto'
-alias up='sudo salt-call --local state.highstate --pillar-root=/srv/salt/pillar'
-alias gstatus='git status'
-alias gdiff='git diff'
-alias gpull='git pull --rebase'
+alias gadd='git add'
 alias gcommit='git commit -v -a'
+alias gdiff='git diff'
+alias glog='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+alias gpull='git pull --rebase'
 alias gpush='git push'
+alias gstat='git status'
+alias grep='grep --color=auto'
+alias ls='ls --color=auto -CF'
+alias up='sudo salt-call --local state.highstate --pillar-root=/srv/salt/pillar'
+alias vi='vim'
+alias x='startx'
 
 export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] '
 export LESS='-R'
