@@ -5,7 +5,7 @@
     browser = /usr/bin/chromium
     dmenu = /usr/bin/dmenu -p dunst:
     follow = mouse
-    font = Terminus (TTF) 15
+    font = Share 15
     format = "<b>%s</b>\n%b"
     geometry = "300x5-0+29"
     history_length = 20
