@@ -1,12 +1,12 @@
 #!/bin/bash
 # switch between hi/low dpi
-# TODO: sed instead of copy?, telegram scaling, kill urxvtd?
+# TODO: sed instead of copy?, telegram scaling, kill urxvtd?, setxkbmap/xset not working
 
 files=~/github/dotfiles
 
 common(){
     # kill apps that will be reloaded
-    for x in chromium firefox spotify weechat; do
+    for x in chromium firefox spotify weechat dunst; do
         pkill $x
     done
     
@@ -21,6 +21,10 @@ common(){
     # xresources
     cp $files/.Xresources-$mode ~/.Xresources
     xrdb -merge ~/.Xresources
+
+    # dunst
+    cp $files/.config/dunst/dunstrc-$mode ~/.config/dunst/dunstrc
+    dunst &
     
     # chromium
     cp $files/.config/chromium-flags-$mode.conf ~/.config/chromium-flags.conf
