@@ -5,7 +5,7 @@ workspace_layout tabbed
 hide_edge_borders both
 
 # modifier and floating modifier
-set $mod Mod4
+set $mod Mod1
 floating_modifier $mod
 
 # font
