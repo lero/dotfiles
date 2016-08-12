@@ -5,7 +5,7 @@
 shopt -s histappend
 shopt -s checkwinsize
 
-alias chroma='mpv http://85.25.86.69:8000'
+alias chroma='mpv http://176.31.123.212:9000/'
 alias gadd='git add'
 alias gamend='git commit -v -a --amend'
 alias gcommit='git commit -v -a'
