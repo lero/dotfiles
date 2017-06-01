@@ -1,0 +1,8 @@
+[Unit]
+Description=Disable XHC1
+
+[Service]
+ExecStart=/usr/bin/sudo /usr/bin/bash -c 'echo XHC1 > /proc/acpi/wakeup'
+
+[Install]
+WantedBy=default.target
