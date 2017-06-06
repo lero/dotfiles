@@ -16,6 +16,7 @@ set $ws1 1:comm
 set $ws2 2:web
 set $ws3 3:term
 set $ws4 4:mail
+set $ws5 5:extra
 
 # term, kill, run and lock
 bindsym $mod+Return exec urxvtc
@@ -134,7 +135,7 @@ bindsym XF86KbdBrightnessDown exec kbdlight down
 # window assignments
 assign [class="Telegram"] → $ws1
 assign [class="Spotify"] → $ws1
-assign [class="chromium"] → $ws2
+assign [class="Chromium"] → $ws2
 assign [class="Firefox"] → $ws4
 
 # exec some applications
