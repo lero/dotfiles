@@ -128,10 +128,6 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
-# kbd brightness
-bindsym XF86KbdBrightnessUp exec kbdlight up
-bindsym XF86KbdBrightnessDown exec kbdlight down
-
 # window assignments
 assign [class="Telegram"] → $ws1
 assign [class="Spotify"] → $ws1
@@ -140,12 +136,12 @@ assign [class="Firefox"] → $ws4
 
 # exec some applications
 exec --no-startup-id dropbox-cli start
-exec --no-startup-id telegram-desktop
+#exec --no-startup-id telegram-desktop
 exec --no-startup-id dunst
 #exec --no-startup-id redshift -l 52.35:4.852
 exec --no-startup-id chromium
 exec --no-startup-id firefox
-exec --no-startup-id urxvtc -e weechat
+#exec --no-startup-id urxvtc -e weechat
 exec --no-startup-id xautolock
 
 client.focused          #285577 #285577 #FFFFFF #285577
