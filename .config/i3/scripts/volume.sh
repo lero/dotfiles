@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mute=$(amixer -c1 get Master | grep Mono: | awk '{print $6}')
-vol=$(amixer -c1 get Master | grep Mono: | awk '{print $4}' | tr -d '[%]')
+mute=$(amixer -c0 get Master | grep Mono: | awk '{print $6}')
+vol=$(amixer -c0 get Master | grep Mono: | awk '{print $4}' | tr -d '[%]')
 
 if [ $mute == "[on]" ]; then
     if [ $vol -le 50 ]; then
