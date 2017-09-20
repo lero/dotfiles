@@ -117,8 +117,8 @@ bar {
 }
 
 # sound
-bindsym XF86AudioRaiseVolume exec amixer -c1 -q sset Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -c1 -q sset Master 5%- unmute
+bindsym XF86AudioRaiseVolume exec amixer -c0 -q sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -c0 -q sset Master 5%- unmute
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPrev exec playerctl previous
