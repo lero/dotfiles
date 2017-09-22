@@ -5,7 +5,7 @@
 shopt -s histappend
 shopt -s checkwinsize
 
-alias chroma='mpv http://176.31.123.212:9000/'
+alias chroma='mpv http://176.31.123.212:10000/'
 alias gadd='git add'
 alias gamend='git commit -v -a --amend'
 alias gcommit='git commit -v -a'
@@ -31,18 +31,6 @@ export HISTSIZE=5000
 export HISTFILESIZE=10000
 export HISTCONTROL=ignoredups
 export HISTIGNORE='ls:bg:fg:history'
-
-man() {
-  env \
-  LESS_TERMCAP_mb=$'\E[1;31m' \
-  LESS_TERMCAP_md=$'\E[1;31m' \
-  LESS_TERMCAP_me=$'\E[0m' \
-  LESS_TERMCAP_se=$'\E[0m' \
-  LESS_TERMCAP_so=$'\E[1;44;33m' \
-  LESS_TERMCAP_ue=$'\E[0m' \
-  LESS_TERMCAP_us=$'\E[1;32m' \
-  man "$@"
-}
 
 # ssh
 ssh-add -l &>/dev/null
