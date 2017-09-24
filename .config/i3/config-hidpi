@@ -9,7 +9,7 @@ set $mod Mod1
 floating_modifier $mod
 
 # font
-font pango: Share 15
+font pango: Share 16
 
 # set workspace names
 set $ws1 1:comm
@@ -113,7 +113,7 @@ bar {
 	position top
     status_command i3blocks
     tray_output primary
-    font pango: Share 15 
+    font pango: Share 16 
 }
 
 # sound

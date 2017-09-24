@@ -20,6 +20,8 @@ alias ls='ls --color=auto -CF'
 alias sup='sudo salt-call --local state.highstate --pillar-root=/srv/salt/pillar'
 alias up='yaourt -Syua'
 alias vi='vim'
+alias vpnon='nmcli con up work --ask'
+alias vpnoff='nmcli con down work'
 alias x='startx'
 
 export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] '
