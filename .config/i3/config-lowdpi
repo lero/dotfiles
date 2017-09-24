@@ -27,7 +27,7 @@ workspace 5 output DP2
 # term, kill, run and lock
 bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn 'Share-10'
 bindsym $mod+Control+l exec ~/.config/i3/scripts/locker.sh
 
 # change focus

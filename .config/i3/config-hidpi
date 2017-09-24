@@ -21,7 +21,7 @@ set $ws5 5:extra
 # term, kill, run and lock
 bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn 'Share-16'
 bindsym $mod+Control+l exec ~/.config/i3/scripts/locker.sh
 
 # change focus
