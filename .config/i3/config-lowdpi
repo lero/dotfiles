@@ -141,6 +141,7 @@ assign [class="Chromium"] → $ws2
 assign [class="Firefox"] → $ws4
 
 # exec some applications
+exec --no-startup-id compton -b
 exec --no-startup-id dropbox-cli start
 exec --no-startup-id dunst
 exec --no-startup-id redshift
