@@ -33,6 +33,7 @@ export HISTSIZE=5000
 export HISTFILESIZE=10000
 export HISTCONTROL=ignoredups
 export HISTIGNORE='ls:bg:fg:history'
+export TERM=rxvt-256color
 
 # ssh
 ssh-add -l &>/dev/null
