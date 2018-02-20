@@ -8,8 +8,8 @@ Xft.hintstyle:  hintslight
 Xautolock.time: 10
 Xautolock.locker: ~/.config/i3/scripts/locker.sh
 
-URxvt.font: xft:Terminus (TTF):size=12:antialias=true
-URxvt.boldFont: xft:Terminus (TTF):bold:size=12:antialias=true
+URxvt.font: xft:xos4 Terminus:size=12:antialias=true
+URxvt.boldFont: xft:xos4 Terminus:bold:size=12:antialias=true
 URxvt.scrollBar: false
 URxvt.loginShell: true
 URxvt.perl-ext-common: default,matcher,selection-to-clipboard
